@@ -16,7 +16,8 @@ public class PersonDAO
     @Autowired
     ArrayList<Person> dB;
 
-    public ArrayList<Person> getPeople() { //"Database"
+    public ArrayList<Person> getPeople()
+    { //"Database"
         return dB;
     }
 
@@ -37,5 +38,30 @@ public class PersonDAO
     public void createNewPerson(Person person)
     {
         dB.add(person);
+    }
+
+    public void updatePerson(String oldName, String newName)
+    {
+        for (Person person : dB)
+        {
+            if (person.name.equals(oldName)) //determines if value of object 1 (.name) is equal to value
+            // object 2 [(oldName)]
+            {
+                person.name = newName;
+            }
+        }
+    }
+
+    public void deletePerson(String name)
+    {
+        ArrayList<Person> toRemove = new ArrayList<>();
+        for (Person person : dB)
+        {
+            if (person.name.equals(name))
+            {
+                toRemove.add(person);
+            }
+        }
+        dB.removeAll(toRemove);
     }
 }

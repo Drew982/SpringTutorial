@@ -28,4 +28,14 @@ public class PersonService
     {
         personDAO.createNewPerson(person);
     }
+
+    public void updatePerson(String oldName, String newName)
+    {
+        personDAO.updatePerson(oldName, newName);
+    }
+
+    public void deletePerson(String name)
+    {
+        personDAO.deletePerson(name);
+    }
 }

@@ -33,4 +33,17 @@ public class PersonController
     {
         personService.createNewPerson(person);
     }
+
+    @RequestMapping(path = "/updatePerson/{oldName}/{newName}", method = RequestMethod.PUT)
+    public void updatePerson(@PathVariable(value = "oldName") String oldName,
+                             @PathVariable(value = "newName") String newName)
+    {
+        personService.updatePerson(oldName, newName);
+    }
+
+    @RequestMapping(path = "/deletePerson/{name}", method = RequestMethod.DELETE)
+    public void deletePerson(@PathVariable(value = "name") String name)
+    {
+        personService.deletePerson(name);
+    }
 }

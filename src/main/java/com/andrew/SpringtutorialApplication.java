@@ -31,6 +31,7 @@ public class SpringtutorialApplication {
         ArrayList<Person> list = new ArrayList<>();
         list.add(new Person("Andrew", 22));
         list.add(new Person("Lee", 24));
+        list.add(new Person("Lee", 24));
         list.add(new Person("Jon", 24));
         list.add(new Person("Mittens", 2));
         return list;

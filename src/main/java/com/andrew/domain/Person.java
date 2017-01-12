@@ -17,10 +17,17 @@ public class Person
 
     public String name;
     public int age;
+//    public int id;
 
     @Override
     public String toString()
     {
         return name; //Overrides location & memory call (parent's version of toString) and displays name (new version)
+    }
+
+    @Override
+    public boolean equals(Object obj)
+    {
+        return obj instanceof Person && age == ((Person) obj).age;
     }
 }
