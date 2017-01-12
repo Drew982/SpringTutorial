@@ -54,14 +54,6 @@ public class PersonDAO
 
     public void deletePerson(String name)
     {
-        ArrayList<Person> toRemove = new ArrayList<>();
-        for (Person person : dB)
-        {
-            if (person.name.equals(name))
-            {
-                toRemove.add(person);
-            }
-        }
-        dB.removeAll(toRemove);
+        dB.removeIf(person -> person.name.equals(name));
     }
 }
